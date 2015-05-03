@@ -52,15 +52,16 @@
             <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" alt="rss feed"/></a>
           {% endif %}
 	    </div>
+	    <nav class="pages"><ul>
 	    {% if PAGES %}
-	      <nav class="pages">
 	        {% for p in PAGES %}
 			  <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
 			  {% if not loop.last %}-{% endif %}
 			{% endfor %}
-	      </nav>
 	    {% endif %}
-		<a href="{{ SITEURL }}" class="title">{{ SITENAME }}</a>
+	    <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
+	    <li><a href="{{ SITEURL }}" class="title">{{ SITENAME }}</a></li>
+	    </ul></nav>
       </header>
 	
 	  <div class="wrapper">

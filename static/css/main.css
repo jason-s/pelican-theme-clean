@@ -76,6 +76,10 @@ footer {
 
 /* Header */
 
+header {
+  padding: 0;
+}
+
 header a {
   color: #E5E5E3;
   border-bottom: none;
@@ -106,13 +110,33 @@ header .feeds a:active {
 }
 
 header .pages {
-  float: right;
+  float: left;
 }
 
 header .pages a {
   font-size: 1.1em;
 }
 
+/* header nav stuff snarfed from notmyidea:
+https://github.com/getpelican/pelican-themes/blob/master/notmyidea-cms/static/css/main.css
+*/
+header nav {}
+header nav ul {list-style: none; margin: 0 auto; padding: 0;}
+header nav li {float: left; display: inline; margin: 0;}
+header nav a:link, header nav a:visited {
+color: #fff;
+display: inline-block;
+padding: 0 0.5em;
+margin: 0;
+height: 100%;
+text-decoration: none;
+}
+header nav a:hover, header nav a:active,
+header nav .active a:link, header nav .active a:visited {
+background: #C74451;
+color: #fff;
+text-shadow: none !important;
+}
 
 /* Sidebar */
 
