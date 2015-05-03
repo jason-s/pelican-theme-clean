@@ -218,6 +218,20 @@ article.summary .metadata {
   margin: 0;
 }
 
+/* code formatting: snarfed from bitbucket CSS */
+code, pre {
+font-family: Consolas,Menlo,"Liberation Mono",Courier,monospace;
+font-size: 80%;
+}
+
+p > code {
+background: none repeat scroll 0% 0% #F5F5F5;
+border: 1px solid #CCC;
+border-radius: 3px;
+padding: 1px 1px;
+}
+/* end inline code */
+
 /* Listings */
 
 ol.archive li {

@@ -20,6 +20,23 @@
     {% if FEED_ALL_RSS %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
+
+    {% if MATHJAX %}    
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    {% endif %}
+
+
 </head>
 	
 <body>
@@ -91,13 +108,13 @@
 
       <footer>
 		<p role="contentinfo">
-		  © 2013 {{ AUTHOR }} - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+		  © 2015 {{ AUTHOR }} - Proudly powered by <a href="http://blog.getpelican.com/">pelican</a>. Theme <a href="https://github.com/jason-s/pelican-theme-clean">clean</a>.
     	</p>
 
 	  </footer>	
 
 	</div>
-	
+		
 	{% if GOOGLE_ANALYTICS %}
 	  <script>
 		var _gaq=[['_setAccount','{{ GOOGLE_ANALYTICS }}'],['_trackPageview']];
