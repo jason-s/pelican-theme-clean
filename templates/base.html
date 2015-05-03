@@ -55,12 +55,11 @@
 	    <nav class="pages"><ul>
 	    {% if PAGES %}
 	        {% for p in PAGES %}
-			  <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-			  {% if not loop.last %}-{% endif %}
+			  <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
 			{% endfor %}
 	    {% endif %}
+	    <li><a href="{{ SITEURL }}/{{ INDEX_URL }}" class="title">{{ BLOGNAME }}</a></li>
 	    <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
-	    <li><a href="{{ SITEURL }}" class="title">{{ SITENAME }}</a></li>
 	    </ul></nav>
       </header>
 	
@@ -116,14 +115,7 @@
 
 	</div>
 		
-	{% if GOOGLE_ANALYTICS %}
-	  <script>
-		var _gaq=[['_setAccount','{{ GOOGLE_ANALYTICS }}'],['_trackPageview']];
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	  </script>
-    {% endif %}
+    {% include 'analytics.html' %}
 
 </body>
 </html>
